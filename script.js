@@ -1,10 +1,12 @@
 document.getElementById("ask").addEventListener("click", function() {
-    const question = document.getElementById("question").value.trim();
-    if (!question || question[question.length - 1] !== "?") {
-      alert("Please enter a valid question ending with a question mark.");
-      return;
-    }
-  
+  const question = document.getElementById("question").value.trim();
+  if (!question || question[question.length - 1] !== "?") {
+    alert("Please enter a valid question ending with a question mark.");
+    return;
+  }
+
+  document.getElementById("ball").classList.add("shake");
+  setTimeout(function() {
     const answers = [
       "It is certain.",
       "It is decidedly so.",
@@ -27,8 +29,10 @@ document.getElementById("ask").addEventListener("click", function() {
       "Outlook not so good.",
       "Very doubtful."
     ];
-  
+
     const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
     document.getElementById("answer").textContent = randomAnswer;
-  });
-  
+
+    document.getElementById("ball").classList.remove("shake");
+  }, 3000);
+});

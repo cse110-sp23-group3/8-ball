@@ -44,4 +44,22 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
   }
+
+  img {width: 10%;}
+    .shake {
+      animation: shake 3s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      10% { transform: translateX(-20px) rotate(-20deg); }
+      20% { transform: translateX(20px) rotate(20deg); }
+      30% { transform: translateX(-20px) rotate(-20deg); }
+      40% { transform: translateX(20px) rotate(20deg); }
+      50% { transform: translateX(-20px) rotate(-20deg); }
+      60% { transform: translateX(20px) rotate(20deg); }
+      70% { transform: translateX(-20px) rotate(-20deg); }
+      80% { transform: translateX(20px) rotate(20deg); }
+      90% { transform: translateX(-20px) rotate(-20deg); }
+      100% { transform: translateX(0); }
+    }
   

@@ -1,11 +1,13 @@
 document.getElementById("ask").addEventListener("click", function() {
   const question = document.getElementById("question").value.trim();
+  const shakeSound = document.getElementById("shake-sound");
   if (!question || question[question.length - 1] !== "?") {
     alert("Please enter a valid question ending with a question mark.");
     return;
   }
 
   document.getElementById("ball").classList.add("shake");
+  shakeSound.play();
   setTimeout(function() {
     const answers = [
       "It is certain.",
@@ -27,7 +29,29 @@ document.getElementById("ask").addEventListener("click", function() {
       "My reply is no.",
       "My sources say no.",
       "Outlook not so good.",
-      "Very doubtful."
+      "Very doubtful.",
+      "As I see it, yes.",
+      "Ask again later.",
+      "Better not tell you now.",
+      "Cannot predict now.",
+      "Concentrate and ask again.",
+      "Don’t count on it.",
+      "It is certain.",
+      "It is decidedly so.",
+      "Most likely.",
+      "My reply is no.",
+      "My sources say no.",
+      "Outlook not so good.",
+      "Outlook good.",
+      "Reply hazy, try again.",
+      "Signs point to yes.",
+      "Very doubtful.",
+      "Without a doubt.",
+      "Yes.",
+      "Yes – definitely.",
+      "You may rely on it.",
+      "The cake is a lie.",
+      "42 is the answer to everything."
     ];
 
     const randomAnswer = answers[Math.floor(Math.random() * answers.length)];

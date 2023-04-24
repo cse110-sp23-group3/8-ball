@@ -1,4 +1,4 @@
-import { isValidQuestion, getRandomAnswer } from './assets/js/main.js';
+import { askedBefore, isValidQuestion, getRandomAnswer } from './assets/js/main.js';
 
 /**
  * @description     Tests the given function and logs the result to the console.
@@ -30,3 +30,33 @@ test('getRandomAnswer', () => {
         throw new Error('Expected a string');
     }
 });
+
+test('askedBefore', () => {
+    let q1 = "Do pigs fly?";
+    let q2 = "Do pigs say hi?";
+    let pa1 = "Reply hazy, try again.";
+    let pa2 = "Concentrate and ask again.";
+    let pa3 = "It is certain.";
+    // check true if same question asked twice without ask again prompt
+    if (askedBefore(q1, q1, pa3) !== true) {
+        throw new Error('Expected true since same question asked twice without ask again prompt')
+    }
+    // check false if different questions asked without ask again prompt
+    if (askedBefore(q1, q2, pa3) !== false) {
+        throw new Error('Expected false since different questions asked without ask again prompt')
+    }
+    // check false if same question asked twice with ask again prompt
+    if (askedBefore(q1, q1, pa1) !== false) {
+        throw new Error('Expected false since user prompted to ask again (Reply hazy)')
+    }
+    if (askedBefore(q1, q1, pa2) !== false) {
+        throw new Error('Expected false since user prompted to ask again (Concentrate)')
+    }
+    // check false if different questions asked with ask again prompt
+    if (askedBefore(q1, q2, pa1) !== false) {
+        throw new Error('Expected false since user prompted to ask again (Reply hazy)')
+    }
+    if (askedBefore(q1, q2, pa2) !== false) {
+        throw new Error('Expected false since user prompted to ask again (Concentrate)')
+    }
+})

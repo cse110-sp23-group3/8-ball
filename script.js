@@ -4,16 +4,20 @@ let prevQuestion = "";
 let prevAnswer = "";
 
 document.getElementById("ask").addEventListener("click", function() {
+  // disable button so user can't click it while getting answer
+  document.getElementById("ask").disabled = true;
   const question = document.getElementById("question").value.trim();
   const shakeSound = document.getElementById("shake-sound");
   if (!question || question[question.length - 1] !== "?") {
     alert("Please enter a valid question ending with a question mark.");
+    document.getElementById("ask").disabled = false;
     return;
   }
 
   // prompt user to ask again if they are asking the same question twice, but were not prompted to try again immediately
   if ((question == prevQuestion) && (prevAnswer != "Reply hazy, try again.") && (prevAnswer != "Concentrate and ask again.")) {
     alert("This question has already been answered. Please ask a different question.");
+    document.getElementById("ask").disabled = false;
     return;
   }
 
@@ -72,5 +76,7 @@ document.getElementById("ask").addEventListener("click", function() {
     document.getElementById("answer").textContent = randomAnswer;
 
     document.getElementById("ball").classList.remove("shake");
+    // enable button so user can ask another question
+    document.getElementById("ask").disabled = false;
   }, 3000);
 });

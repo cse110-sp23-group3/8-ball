@@ -49,6 +49,10 @@ button:hover {
   background-color: #8169a0;
 }
 
+button:disabled {
+  background-color: #aca4f1;
+}
+
 #answer {
   margin-top: 1rem;
   font-size: 1.5rem;

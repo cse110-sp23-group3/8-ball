@@ -1,4 +1,4 @@
-import { isValidQuestion, setAnswerToDOM } from './main.js';
+import { isValidQuestion, getRandomAnswer } from './main.js';
 
 const AUDIO_FILE = "assets/media/mystical8ball.mp3"
 
@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 const continueAfter = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+/**
+ * @description Gets the question from the input and returns a random answer.
+ * @returns {string} The answer to the question.
+ * @throws {Error} If the question is invalid.
+ */
+const setAnswerToDOM = (questionElement, answerElement) => {
+    const question = questionElement.value;
+    answerElement.innerText = getRandomAnswer(question);
+};
 
 /**
  * @description Adds the answer effect to the answer element.

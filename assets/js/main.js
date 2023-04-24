@@ -61,16 +61,6 @@ const getRandomAnswer = (question) => {
 }
 
 /**
- * @description Gets the question from the input and returns a random answer.
- * @returns {string} The answer to the question.
- * @throws {Error} If the question is invalid.
- */
-const setAnswerToDOM = (questionElement, answerElement) => {
-    const question = questionElement.value;
-    answerElement.innerText = getRandomAnswer(question);
-};
-
-/**
  * @description Checks if the question is valid.
  * @param {string} q The question to check.
  * @returns {boolean} True if the question is valid, false otherwise.
@@ -80,4 +70,4 @@ const isValidQuestion = (q) => {
 }
 
 // Add this line at the end of your script.js file
-export { isValidQuestion, setAnswerToDOM, getRandomAnswer };
+export { isValidQuestion, getRandomAnswer };

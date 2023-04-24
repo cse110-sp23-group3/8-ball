@@ -47,7 +47,7 @@ body {
 
   img {width: 15%;}
     .shake {
-      animation: shake 3s;
+      animation: shake 6s;
     }
     @keyframes shake {
       0% { transform: translateX(0); }

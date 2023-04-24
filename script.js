@@ -1,3 +1,6 @@
+// declare variables to store previous question to ensure user does not ask same question twice
+let prevQuestion = "";
+
 document.getElementById("ask").addEventListener("click", function() {
   const question = document.getElementById("question").value.trim();
   const shakeSound = document.getElementById("shake-sound");
@@ -5,6 +8,13 @@ document.getElementById("ask").addEventListener("click", function() {
     alert("Please enter a valid question ending with a question mark.");
     return;
   }
+
+  if (question == prevQuestion) {
+    alert("This question has already been answered. Please ask a different question.");
+    return;
+  }
+
+  prevQuestion = question;
 
   document.getElementById("ball").classList.add("shake");
   shakeSound.play();

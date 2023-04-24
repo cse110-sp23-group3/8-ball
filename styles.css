@@ -1,4 +1,4 @@
-body {
+ .main {
     font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
@@ -62,4 +62,36 @@ body {
       90% { transform: translateX(-20px) rotate(-20deg); }
       100% { transform: translateX(0); }
     }
-  
+    nav {
+      font-family: Arial, sans-serif;
+      background-image: url("lion-navbar.jpg");
+      background-size: cover;
+      background-color: #333;
+      color: #fff;
+      height: 50px;
+      background-image 
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    nav ul li {
+      flex: 1;
+      text-align: center;
+    }
+    
+    nav ul li a {
+      display: block;
+      color: #fff;
+      padding: 15px;
+      text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+      background-color: #817272;
+    }
+    

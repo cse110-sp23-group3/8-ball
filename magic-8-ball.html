@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Magic 8 Ball</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Magic 8 Ball</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <main>
+        <div class="container">
+            <h1>Magic 8 Ball</h1>
+            <input type="text" id="question" placeholder="Ask your question...">
+            <button id="ask">Ask</button>
+            <br>
+            <br>
+            <br>
+            <img id="ball" src="image/8ball_image.png">
+            <audio id="shake-sound" src="shake-sound.m4a"></audio>
+            <p id="answer"></p>
+        </div>
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>

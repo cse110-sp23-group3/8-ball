@@ -1,6 +1,9 @@
-import { isValidQuestion, getRandomAnswer } from './main.js';
+import { askedBefore, isValidQuestion, getRandomAnswer } from './main.js';
 
 const AUDIO_FILE = "assets/media/mystical8ball.mp3"
+
+let prevAnswer = "";
+let prevQuestion = "";
 
 /**
  * @description Main function that runs when the DOM is loaded.
@@ -15,6 +18,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (!isValidQuestion(question.value)) {
                 throw new Error("Please enter a valid question ending with a question mark.")
             }
+            if (askedBefore(question.value, prevQuestion, prevAnswer)) {
+                throw new Error("This question has already been answered. Please ask a different question.")
+            }
 
             // Loading state
             answer.innerHTML = "..."
@@ -24,6 +30,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Answering
             setAnswerToDOM(question, answer)
+
+            // Store question and answer for later
+            prevAnswer = answer.innerText;
+            prevQuestion = question.value;
         } catch (e) {
             alert(e.message)
         }

@@ -58,5 +58,5 @@ document.getElementById("ask").addEventListener("click", function() {
     document.getElementById("answer").textContent = randomAnswer;
 
     document.getElementById("ball").classList.remove("shake");
-  }, 3000);
+  }, 6000);
 });

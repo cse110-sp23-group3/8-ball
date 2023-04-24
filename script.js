@@ -1,5 +1,7 @@
-// declare variables to store previous question to ensure user does not ask same question twice
+/* declare variables to store previous question and answer to ensure user 
+   does not ask same question twice if non-ambiguous answer given */
 let prevQuestion = "";
+let prevAnswer = "";
 
 document.getElementById("ask").addEventListener("click", function() {
   const question = document.getElementById("question").value.trim();
@@ -9,7 +11,8 @@ document.getElementById("ask").addEventListener("click", function() {
     return;
   }
 
-  if (question == prevQuestion) {
+  // prompt user to ask again if they are asking the same question twice, but were not prompted to try again immediately
+  if ((question == prevQuestion) && (prevAnswer != "Reply hazy, try again.") && (prevAnswer != "Concentrate and ask again.")) {
     alert("This question has already been answered. Please ask a different question.");
     return;
   }
@@ -65,6 +68,7 @@ document.getElementById("ask").addEventListener("click", function() {
     ];
 
     const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+    prevAnswer = randomAnswer;
     document.getElementById("answer").textContent = randomAnswer;
 
     document.getElementById("ball").classList.remove("shake");

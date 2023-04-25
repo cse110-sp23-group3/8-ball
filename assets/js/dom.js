@@ -60,7 +60,7 @@ const continueAfter = (ms) => {
  */
 const setAnswerToDOM = (questionElement, answerElement) => {
     const question = questionElement.value;
-    answerElement.innerText = getRandomAnswer(question);
+    answerElement.innerText = getRandomAnswer(question, prevQuestion, prevAnswer);
 };
 
 /**

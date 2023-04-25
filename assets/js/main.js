@@ -80,7 +80,7 @@ const isValidQuestion = (q) => {
  * @returns {boolean} True if the question has been asked before, false otherwise.
  */
 const askedBefore = (q, pq, pa) => {
-    if ((pa !== "Reply hazy, try again.") && (pa !== "Concentrate and ask again.")) {
+    if (!(pa.includes("again")) && !(pa.includes("now"))) {
         return q === pq;
     }
     return false;

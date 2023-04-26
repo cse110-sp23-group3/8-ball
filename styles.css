@@ -113,3 +113,10 @@ img {
     transform: translateX(0);
   }
 }
+
+#sample-questions {
+  color:black;
+  font-family: 'Great Vibes', cursive;
+  font-size: 200%;
+  margin-bottom: 0px;
+}

@@ -22,11 +22,11 @@
 ## Problem Statement
 
 - Problem: Handle repeat question
-- Solution: Detect repeat asked question and ask user to enter a different one
+  - Solution: Detect repeat asked question and ask user to enter a different one
 - Problem: Design enhancement
-- Solution: Add 8-ball image with our team logo; Add animation to the image and audio to the animation
+  - Solution: Add 8-ball image with our team logo; Add animation to the image and audio to the animation
 - Problem: Duplicate in answerlist 
-- Solution: Add more possible answr to the list and remove the duplicate answer
+  - Solution: Add more possible answr to the list and remove the duplicate answer
 
 ## Unit Test
 

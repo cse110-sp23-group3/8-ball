@@ -3,6 +3,7 @@
 ## Website Info
 
 - Website Link: https://cse110-sp23-group3.github.io/8-ball/
+- Project slides: https://docs.google.com/presentation/d/1d1kxv6KMosrcdN_mtuxBd-KzHd8hcqui-LANHAJvJoE/edit?usp=sharing 
 
 ## Project Description
 
